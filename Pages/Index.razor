@@ -1,0 +1,27 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+
+<h3>Login</h3>
+
+<MatTextField @bind-Value="@userId" Label="User:"></MatTextField>
+<MatTextField @bind-Value="@password" Label="Passwort:" Type="password"></MatTextField>
+<MatButton @onclick="GotoNextPage">Login</MatButton>
+
+@code {
+    string userId;
+    string password;
+
+    void GotoNextPage()
+    {
+        if (userId == "oliver" && password == "fest")
+        {
+            NavigationManager.NavigateTo("counter");
+        }
+        else
+        {
+
+            NavigationManager.NavigateTo("fehleingabe");
+        }
+    }
+}

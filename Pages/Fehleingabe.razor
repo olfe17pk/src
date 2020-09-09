@@ -1,0 +1,13 @@
+﻿@page "/fehleingabe"
+@inject NavigationManager NavigationManager
+
+<h3>Falsches Passwort oder falscher Benutzer</h3>
+
+<MatButton @onclick="GotoNextPage">Zurück</MatButton>
+
+@code {
+    void GotoNextPage()
+    {
+        NavigationManager.NavigateTo("\\");
+    }
+}
